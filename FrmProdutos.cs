@@ -76,8 +76,7 @@ namespace _200130_Projeto
                                             "\n EstoqueMin, " +
                                             "\n ValorVenda, " +
                                             "\n ValorCusto, " +
-                                            "\n Foto, " +
-                                            "\n imagem," + 
+                                            "\n Foto, " + 
                                             "\n LinkVideo, " +
                                             "\n ForaLinha)" +
                                             "\n values (@produto, " +
@@ -89,7 +88,6 @@ namespace _200130_Projeto
                                             "\n @ValorVenda, " +
                                             "\n @ValorCusto, " +
                                             "\n @Foto, " +
-                                            "\n @imagem, " + 
                                             "\n @LinkVideo, " +
                                             "\n @ForaLinha)", Mysql.Conexao);
 
@@ -102,7 +100,6 @@ namespace _200130_Projeto
                 Mysql.Comando.Parameters.AddWithValue("@ValorVenda", Convert.ToDouble(TxtValorVenda.Text));
                 Mysql.Comando.Parameters.AddWithValue("@ValorCusto", Convert.ToDouble(TxtValorCusto.Text));
                 Mysql.Comando.Parameters.AddWithValue("@Foto", PicProduto.ImageLocation);
-                Mysql.Comando.Parameters.AddWithValue("@imagem", PicProduto.ImageLocation.Substring(28));
                 Mysql.Comando.Parameters.AddWithValue("@LinkVideo", TxtLink.Text);
                 Mysql.Comando.Parameters.AddWithValue("@ForaLinha", Convert.ToBoolean(ChkFora.Checked));
                 //Executa o Mysql.Comando pra inserção e fecha a conexao
@@ -181,11 +178,11 @@ namespace _200130_Projeto
                 TxtValorVenda.Text = DgvProdutos.CurrentRow.Cells[7].Value.ToString();
                 TxtValorCusto.Text = DgvProdutos.CurrentRow.Cells[8].Value.ToString();
                 PicProduto.ImageLocation = DgvProdutos.CurrentRow.Cells[9].Value.ToString();
-                TxtLink.Text = DgvProdutos.CurrentRow.Cells[11].Value.ToString();
-                ChkFora.Checked = (Boolean)DgvProdutos.CurrentRow.Cells[12].Value;
+                TxtLink.Text = DgvProdutos.CurrentRow.Cells[10].Value.ToString();
+                ChkFora.Checked = (Boolean)DgvProdutos.CurrentRow.Cells[11].Value;
                 //exibe o nome da categoria e fornecedor no control box. Foi criado 2 cells para isso
-                CboCategoria.Text = DgvProdutos.CurrentRow.Cells[13].Value.ToString();
-                CboFornecedor.Text = DgvProdutos.CurrentRow.Cells[14].Value.ToString();
+                CboCategoria.Text = DgvProdutos.CurrentRow.Cells[12].Value.ToString();
+                CboFornecedor.Text = DgvProdutos.CurrentRow.Cells[13].Value.ToString();
             }
             
         }

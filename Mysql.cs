@@ -75,7 +75,6 @@ namespace _200130_Projeto
                                             "ValorVenda decimal (10,2), " +
                                             "ValorCusto decimal (10,2), " +
                                             "Foto varchar(300), " +
-                                            "imagem varchar (100),"+
                                             "LinkVideo varchar(100), " +
                                             "ForaLinha bool)", Conexao);
                 Comando.ExecuteNonQuery();
